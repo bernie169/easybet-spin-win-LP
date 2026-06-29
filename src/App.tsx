@@ -338,7 +338,7 @@ body{margin:0;background:#050505;color:#fff;font-family:Arial,Helvetica,sans-ser
         </div>
         <button
           className="spin-button"
-          style={{ marginTop: "24px" }}
+          style={{ marginTop: "40px" }}
           onClick={startSpin}
           disabled={stage === 'spinning' || stage === 'pulling'}
         >
