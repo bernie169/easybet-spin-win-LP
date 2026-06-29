@@ -250,14 +250,15 @@ body{margin:0;background:#050505;color:#fff;font-family:Arial,Helvetica,sans-ser
 .slot-stage{position:relative;width:100%;aspect-ratio:540/435;isolation:isolate}
 .machine-frame,.machine-spin,.machine-win{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;transition:opacity .16s ease}
 .machine-spin,.machine-win{opacity:0;pointer-events:none}
+.machine-win{object-position:50% 50%;}
 .slot-stage.is-spinning .machine-frame{opacity:0}
 .slot-stage.is-spinning .machine-spin{opacity:1}
 .slot-stage.is-won .machine-frame,.slot-stage.is-won .machine-spin{opacity:0}
 .slot-stage.is-won .machine-win{opacity:1;filter:drop-shadow(0 0 28px rgba(255,212,0,.72));animation:winPop .45s cubic-bezier(.17,.67,.31,1.42) both}
 
 /* Compact internal Pull Here label: never extends beyond the machine/stage width. */
-.lever-hitbox{position:absolute;right:3.2%;top:20%;width:16%;height:39%;border:0;background:transparent;padding:0;cursor:pointer;z-index:7}
-.pull-label{position:absolute;right:0;top:40%;width:64px;padding:5px 4px;border:1px solid rgba(255,212,0,.88);border-radius:7px;background:linear-gradient(180deg,#2c2100,#0a0a0a);box-shadow:0 0 10px rgba(255,212,0,.48),inset 0 0 8px rgba(255,212,0,.12);color:#ffe96f;font-size:9px;font-weight:950;letter-spacing:.8px;line-height:1.03;text-align:center;transition:transform .32s cubic-bezier(.2,.82,.2,1),opacity .2s ease;pointer-events:none}
+.lever-hitbox{position:absolute;right:1%;top:20%;width:14%;height:39%;border:0;background:transparent;padding:0;cursor:pointer;z-index:7;overflow:hidden}
+.pull-label{position:absolute;right:2px;top:40%;width:56px;padding:5px 4px;border:1px solid rgba(255,212,0,.88);border-radius:7px;background:linear-gradient(180deg,#2c2100,#0a0a0a);box-shadow:0 0 10px rgba(255,212,0,.48),inset 0 0 8px rgba(255,212,0,.12);color:#ffe96f;font-size:9px;font-weight:950;letter-spacing:.8px;line-height:1.03;text-align:center;transition:transform .32s cubic-bezier(.2,.82,.2,1),opacity .2s ease;pointer-events:none}
 .pull-label::after{content:"";position:absolute;right:9px;top:-8px;width:8px;height:8px;border-top:1px solid #ffe96f;border-right:1px solid #ffe96f;transform:rotate(-45deg);opacity:.9}
 .lever-knob{position:absolute;right:15%;top:3%;width:43px;height:43px;border-radius:50%;background:radial-gradient(circle at 31% 27%,#fff8af 0 9%,#ffd400 28%,#b87600 70%,#4a2900);box-shadow:0 0 14px rgba(255,212,0,.6);opacity:.01;transition:transform .32s cubic-bezier(.2,.82,.2,1)}
 .slot-stage.is-pulling .pull-label{transform:translate(-7px,33px) rotate(8deg);opacity:.72}
@@ -287,9 +288,9 @@ body{margin:0;background:#050505;color:#fff;font-family:Arial,Helvetica,sans-ser
 /* Win celebration: layered bulbs and coin burst sit over the supplied artwork without altering it. */
 .win-marquee{position:absolute;z-index:9;pointer-events:none;opacity:0;overflow:hidden}
 .win-marquee::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(180deg,rgba(255,250,170,.98) 0 5px,rgba(255,212,0,.32) 5px 11px,transparent 11px 18px);filter:drop-shadow(0 0 7px rgba(255,212,0,.9));transform:translateY(-22px)}
-.win-marquee-left,.win-marquee-right{top:9%;height:78%;width:7px;border-radius:999px}
-.win-marquee-left{left:10.5%}.win-marquee-right{right:13.8%}
-.win-marquee-top{left:18%;right:18%;top:8.4%;height:8px;border-radius:999px}
+.win-marquee-left,.win-marquee-right{top:0;height:100%;width:8px;border-radius:0}
+.win-marquee-left{left:0}.win-marquee-right{right:0}
+.win-marquee-top{left:0;right:0;top:0;height:8px;border-radius:0}
 .win-marquee-top::before{background:repeating-linear-gradient(90deg,rgba(255,250,170,.98) 0 5px,rgba(255,212,0,.32) 5px 11px,transparent 11px 18px);transform:translateX(-22px)}
 .slot-stage.is-won .win-marquee{opacity:1;animation:marqueePulse .75s ease-in-out infinite}
 .slot-stage.is-won .win-marquee::before{animation:bulbRun .34s linear infinite}
