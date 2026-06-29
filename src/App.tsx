@@ -43,6 +43,19 @@ const Hero = () => (
       />
       </a>
     </div>
+    <div className="relative z-10 p-6 w-full pt-4">
+      <div className="mb-4 inline-block bg-primary text-on-primary-container px-4 py-1 rounded-sm skew-x-[-12deg]">
+        <span className="block skew-x-[12deg] font-black text-sm uppercase tracking-tighter">WELCOME OFFER</span>
+      </div>
+      <motion.div 
+        whileTap={{ scale: 0.95 }}
+        className="w-full"
+      >
+        <a href={TRACKING_LINK} target="_blank" rel="noopener noreferrer" className="block w-full bg-secondary text-on-secondary font-black py-4 rounded-lg text-lg uppercase tracking-wider shadow-[0_10px_20px_rgba(233,30,140,0.3)] transition-transform text-center">
+          Claim Bonus Now
+        </a>
+      </motion.div>
+    </div>
   </section>
 );
 
@@ -212,6 +225,16 @@ const SUPABASE_URL = 'https://gpzovlgzuloevxvutenv.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdwem92bGd6dWxvZXZ4dnV0ZW52Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ5NDE1NDAsImV4cCI6MjA5MDUxNzU0MH0.QJrn3arLWcnY4ACTFpGtbD9pRTIHcMmqr6w8S2OqPdE';
 
 
+const UrgencyStrip = () => {
+  const [count] = React.useState(() => Math.floor(Math.random() * 30) + 120);
+  return (
+    <div className="w-full py-2 px-4 text-center text-xs font-black uppercase tracking-widest"
+      style={{ background: "#1a1200", color: "#FFD600", borderTop: "1px solid #2a2000", borderBottom: "1px solid #2a2000" }}>
+      🔥 {count} people claimed their bonus in the last hour
+    </div>
+  );
+};
+
 const SlotMachine = () => {
   const [stage, setStage] = React.useState<'idle'|'pulling'|'spinning'|'won'>('idle');
   const spinImgRef = React.useRef<HTMLImageElement>(null);
@@ -233,7 +256,7 @@ const SlotMachine = () => {
   };
 
   return (
-    <section className="px-4 py-6">
+    <section className="px-0 py-6" style={{ background: "radial-gradient(ellipse at center, #251d00 0%, #131313 70%)" }}>
       <h2 className="text-2xl font-black uppercase tracking-tighter text-center mb-4">
         SPIN <span className="text-primary italic">&amp; WIN</span>
       </h2>
@@ -279,7 +302,7 @@ const SlotMachine = () => {
               style={{
                 width: '132px',
                 maxWidth: 'none',
-                right: '2px',
+                right: '-66px',
                 top: '37%',
                 filter: 'drop-shadow(0 0 8px rgba(255,212,0,0.45))',
                 transform: stage === 'pulling' ? 'translate(12px,38px) rotate(11deg)' : 'none',
@@ -501,12 +524,11 @@ export default function App() {
       <Header />
       <main className="pt-16">
         <Hero />
+        <UrgencyStrip />
         <SlotMachine />
-        <StatsStrip />
+        <Newsletter />
         <ValueSection />
         <Steps />
-        <Newsletter />
-        <TrustBadges />
       </main>
       <Footer />
       <BottomNav />
