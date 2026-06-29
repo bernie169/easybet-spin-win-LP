@@ -43,19 +43,6 @@ const Hero = () => (
       />
       </a>
     </div>
-    <div className="relative z-10 p-6 w-full pt-4">
-      <div className="mb-4 inline-block bg-primary text-on-primary-container px-4 py-1 rounded-sm skew-x-[-12deg]">
-        <span className="block skew-x-[12deg] font-black text-sm uppercase tracking-tighter">WELCOME OFFER</span>
-      </div>
-      <motion.div 
-        whileTap={{ scale: 0.95 }}
-        className="w-full"
-      >
-        <a href={TRACKING_LINK} target="_blank" rel="noopener noreferrer" className="block w-full bg-secondary text-on-secondary font-black py-4 rounded-lg text-lg uppercase tracking-wider shadow-[0_10px_20px_rgba(233,30,140,0.3)] transition-transform text-center">
-          Claim Bonus Now
-        </a>
-      </motion.div>
-    </div>
   </section>
 );
 
