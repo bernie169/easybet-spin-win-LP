@@ -43,19 +43,6 @@ const Hero = () => (
       />
       </a>
     </div>
-    <div className="relative z-10 p-6 w-full pt-4">
-      <div className="mb-4 inline-block bg-primary text-on-primary-container px-4 py-1 rounded-sm skew-x-[-12deg]">
-        <span className="block skew-x-[12deg] font-black text-sm uppercase tracking-tighter">WELCOME OFFER</span>
-      </div>
-      <motion.div 
-        whileTap={{ scale: 0.95 }}
-        className="w-full"
-      >
-        <a href={TRACKING_LINK} target="_blank" rel="noopener noreferrer" className="block w-full bg-secondary text-on-secondary font-black py-4 rounded-lg text-lg uppercase tracking-wider shadow-[0_10px_20px_rgba(233,30,140,0.3)] transition-transform text-center">
-          Claim Bonus Now
-        </a>
-      </motion.div>
-    </div>
   </section>
 );
 
@@ -246,7 +233,7 @@ const SlotMachine = () => {
   };
 
   return (
-    <section className="px-4 py-8 mx-2 rounded-2xl" style={{ background: "linear-gradient(180deg, #0d0d0d 0%, #1a1200 40%, #0d0d0d 100%)" }}>
+    <section className="px-4 py-6">
       <h2 className="text-2xl font-black uppercase tracking-tighter text-center mb-4">
         SPIN <span className="text-primary italic">&amp; WIN</span>
       </h2>
@@ -292,7 +279,7 @@ const SlotMachine = () => {
               style={{
                 width: '132px',
                 maxWidth: 'none',
-                right: '-8px',
+                right: '2px',
                 top: '37%',
                 filter: 'drop-shadow(0 0 8px rgba(255,212,0,0.45))',
                 transform: stage === 'pulling' ? 'translate(12px,38px) rotate(11deg)' : 'none',
@@ -515,9 +502,11 @@ export default function App() {
       <main className="pt-16">
         <Hero />
         <SlotMachine />
+        <StatsStrip />
         <ValueSection />
         <Steps />
         <Newsletter />
+        <TrustBadges />
       </main>
       <Footer />
       <BottomNav />
