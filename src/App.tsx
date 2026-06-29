@@ -243,10 +243,10 @@ const SlotMachine = () => {
   const stageClass = ['slot-stage', stage === 'pulling' && 'is-pulling', stage === 'spinning' && 'is-spinning', stage === 'won' && 'is-won'].filter(Boolean).join(' ');
 
   return (
-    <section style={{ background: 'radial-gradient(ellipse at 50% 40%, #251d00 0%, #131313 65%)', padding: '24px 0', overflowX: 'hidden' }}>
+    <section style={{ background: 'radial-gradient(ellipse at 50% 40%, #251d00 0%, #131313 65%)', padding: '24px 0' }}>
       <style>{`*{box-sizing:border-box}
 body{margin:0;background:#050505;color:#fff;font-family:Arial,Helvetica,sans-serif}
-.slot-demo{max-width:540px;margin:0 auto;padding:16px}
+.slot-demo{max-width:100%;margin:0 auto;padding:0}
 .slot-stage{position:relative;width:100%;aspect-ratio:540/435;isolation:isolate;overflow:visible}
 .machine-frame,.machine-spin,.machine-win{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;transition:opacity .16s ease}
 .machine-spin,.machine-win{opacity:0;pointer-events:none}
