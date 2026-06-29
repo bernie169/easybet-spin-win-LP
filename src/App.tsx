@@ -246,7 +246,7 @@ const SlotMachine = () => {
   };
 
   return (
-    <section className="px-4 py-6">
+    <section className="px-4 py-8 mx-2 rounded-2xl" style={{ background: "linear-gradient(180deg, #0d0d0d 0%, #1a1200 40%, #0d0d0d 100%)" }}>
       <h2 className="text-2xl font-black uppercase tracking-tighter text-center mb-4">
         SPIN <span className="text-primary italic">&amp; WIN</span>
       </h2>
@@ -292,7 +292,7 @@ const SlotMachine = () => {
               style={{
                 width: '132px',
                 maxWidth: 'none',
-                right: '-66px',
+                right: '-8px',
                 top: '37%',
                 filter: 'drop-shadow(0 0 8px rgba(255,212,0,0.45))',
                 transform: stage === 'pulling' ? 'translate(12px,38px) rotate(11deg)' : 'none',
@@ -515,11 +515,9 @@ export default function App() {
       <main className="pt-16">
         <Hero />
         <SlotMachine />
-        <StatsStrip />
         <ValueSection />
         <Steps />
         <Newsletter />
-        <TrustBadges />
       </main>
       <Footer />
       <BottomNav />
