@@ -247,10 +247,10 @@ const SlotMachine = () => {
       <style>{`*{box-sizing:border-box}
 body{margin:0;background:#050505;color:#fff;font-family:Arial,Helvetica,sans-serif}
 .slot-demo{max-width:540px;margin:0 auto;padding:16px}
-.slot-stage{position:relative;width:100%;aspect-ratio:540/435;isolation:isolate}
+.slot-stage{position:relative;width:100%;aspect-ratio:540/435;isolation:isolate;overflow:visible}
 .machine-frame,.machine-spin,.machine-win{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;transition:opacity .16s ease}
 .machine-spin,.machine-win{opacity:0;pointer-events:none}
-.machine-win{object-position:50% 50%;}
+.machine-win{object-position:center center;object-fit:contain;}
 .slot-stage.is-spinning .machine-frame{opacity:0}
 .slot-stage.is-spinning .machine-spin{opacity:1}
 .slot-stage.is-won .machine-frame,.slot-stage.is-won .machine-spin{opacity:0}
